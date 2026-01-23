@@ -1,0 +1,307 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Portfolio - Python & Django Developer</title>
+  
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+
+    <div class="profile-img">
+      <img src="{% static 'assets/img/my-profile-img.png' %}" alt="" class="img-fluid rounded-circle">
+    </div>
+
+    <a href="/" class="logo d-flex align-items-center justify-content-center">
+      <h1 class="sitename">Michael Paul</h1>
+    </a>
+
+    <div class="social-links text-center">
+      <a href="https://x.com/PJMiike" class="twitter"><i class="bi bi-twitter-x"></i></a>
+      <a href="https://github.com/the-ghosts" class="github"><i class="bi bi-github"></i></a>
+    </div>
+
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
+        <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
+        <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Projects</a></li>
+        <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i> Services</a></li> <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <main class="main">
+
+    <section id="hero" class="hero section dark-background">
+        <img src="{% static 'assets/img/hero-bg.jpg' %}" alt="" data-aos="fade-in">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <h2>Michael Paul</h2>
+        <p>I'm a <span class="typed" data-typed-items="Python Programmer, Django Developer, Multimedia Specialist"></span></p>
+        </div>
+    </section>
+
+    <section id="about" class="about section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>About</h2>
+        <p>Python Programmer and Django Developer focused on building efficient, scalable web applications.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+          <div class="col-lg-4">
+            <img src="{% static 'assets/img/my-profile-img.png' %}" class="img-fluid rounded" alt="">
+          </div>
+          <div class="col-lg-8 content">
+            <h2>Python Developer &amp; Multimedia Specialist</h2>
+            <p class="fst-italic py-3">I specialize in backend development with Python/Django and professional live media streaming.</p>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <strong>Core Stack:</strong> <span>Python, Django, SQLite, Bootstrap</span></li>
+              <li><i class="bi bi-chevron-right"></i> <strong>Media Tools:</strong> <span>OBS, vMix, EasyWorship, VideoPsalm</span></li>
+              <li><i class="bi bi-chevron-right"></i> <strong>Focus:</strong> <span>Web App Development &amp; Media Integration</span></li>
+              <li><i class="bi bi-chevron-right"></i> <strong>Experience:</strong> <span>Backend Developer</span></li>
+            </ul>
+            <p class="py-3">
+              Beyond coding, I am an expert in configuring live streaming environments. I have extensive experience linking broadcasting software like vMix and OBS with social media platforms for seamless live production. My portfolio showcases my ability to build robust web applications like my <strong>Ecommerce Platform</strong> and <strong>Blog System</strong>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="skills section light-background">
+        <div class="container section-title" data-aos="fade-up">
+        <h2>Skills</h2>
+        </div>
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row skills-content">
+            <div class="col-lg-6">
+            <div class="progress"><span class="skill">Python <i class="val">85%</i></span>
+                <div class="progress-bar-wrap"><div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div></div>
+            </div>
+            <div class="progress"><span class="skill">Django <i class="val">60%</i></span>
+                <div class="progress-bar-wrap"><div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div></div>
+            </div>
+            </div>
+            <div class="col-lg-6">
+            <div class="progress"><span class="skill">SQL/Databases <i class="val">60%</i></span>
+                <div class="progress-bar-wrap"><div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div></div>
+            </div>
+            <div class="progress"><span class="skill">Live Streaming & Media <i class="val">70%</i></span>
+                <div class="progress-bar-wrap"><div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div></div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio section">
+        <div class="container section-title" data-aos="fade-up">
+        <h2>Projects</h2>
+        </div>
+        <div class="container">
+        <div class="row gy-4">
+            {% for project in projects %}
+            <div class="col-lg-4 col-md-6 portfolio-item">
+                <div class="portfolio-content h-100 shadow-sm border rounded bg-white">
+                    {% if project.image %}
+                    <img src="{{ project.image.url }}" class="img-fluid" alt="{{ project.title }}">
+                    {% endif %}
+                    <div class="portfolio-info p-3">
+                    <h4 class="text-dark">{{ project.title }}</h4>
+                    <p>Showcasing my completed web applications and technical projects.</p>
+                    <a href="{{ project.github_link }}" class="btn btn-sm btn-primary mt-2">View Repository</a>
+                    </div>
+                </div>
+            </div> 
+            {% endfor %}
+        </div>
+        </div>
+    </section>
+
+    <section id="services" class="services section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>My Services</h2>
+        <p>Combining technical development with live media production.</p>
+      </div>
+
+      <div class="container">
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon flex-shrink-0"><i class="bi bi-code-slash"></i></div>
+            <div>
+              <h4 class="title">Web App Development</h4>
+              <p class="description">Building responsive websites and dynamic web applications using <strong>Python & Django</strong>. I handle backend logic, database management, and user authentication.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon flex-shrink-0"><i class="bi bi-broadcast"></i></div>
+            <div>
+              <h4 class="title">Live Streaming Setup</h4>
+              <p class="description">Expert configuration of <strong>vMix</strong> and <strong>OBS Studio</strong> for professional broadcasts. I set up scenes, overlays, and multi-platform streaming (Facebook/YouTube).</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon flex-shrink-0"><i class="bi bi-projector"></i></div>
+            <div>
+              <h4 class="title">Presentation & Projection</h4>
+              <p class="description">Managing live projection workflows using <strong>EasyWorship</strong> and <strong>VideoPsalm</strong>, ensuring seamless media delivery for events and organizations.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        <p>Feel free to reach out for collaborations or project inquiries.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+
+          <div class="col-lg-5">
+            <div class="info-wrap bg-light p-5 rounded shadow">
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+                <i class="bi bi-envelope flex-shrink-0 text-primary fs-3 me-3"></i>
+                <div>
+                  <h3>Email Me</h3>
+                  <p>michaelpaul3154@gmail.com</p>
+                </div>
+              </div>
+
+              <div class="info-item d-flex mt-4" data-aos="fade-up" data-aos-delay="300">
+                <i class="bi bi-telephone flex-shrink-0 text-primary fs-3 me-3"></i>
+                <div>
+                  <h3>Call Me</h3>
+                  <p>+234 802 893 9814</p>
+                </div>
+              </div>
+
+              <div class="info-item d-flex mt-4" data-aos="fade-up" data-aos-delay="400">
+                <i class="bi bi-twitter-x flex-shrink-0 text-primary fs-3 me-3"></i>
+                <div>
+                  <h3>Follow Me</h3>
+                  <p>x.com/PJMiike</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <form action="{% url 'index' %}" method="post" class="php-email-form bg-light p-4 rounded shadow" data-aos="fade-up" data-aos-delay="200">
+              {% csrf_token %}
+              <div class="row gy-4">
+
+                <div class="col-md-6">
+                  <label for="name-field" class="pb-2">Your Name</label>
+                  <input type="text" name="name" id="name-field" class="form-control" required="">
+                </div>
+
+                <div class="col-md-6">
+                  <label for="email-field" class="pb-2">Your Email</label>
+                  <input type="email" class="form-control" name="email" id="email-field" required="">
+                </div>
+
+                <div class="col-md-12">
+                  <label for="subject-field" class="pb-2">Subject</label>
+                  <input type="text" class="form-control" name="subject" id="subject-field" required="">
+                </div>
+
+                <div class="col-md-12">
+                  <label for="message-field" class="pb-2">Message</label>
+                  <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
+                </div>
+
+                <div class="col-md-12 text-center">
+                  {% if messages %}
+                    {% for message in messages %}
+                      <div class="alert alert-success">{{ message }}</div>
+                    {% endfor %}
+                  {% endif %}
+                  
+                  <button type="submit" class="btn btn-primary rounded-pill px-4 py-2 mt-3">Send Message</button>
+                </div>
+
+              </div>
+            </form>
+          </div>
+          </div>
+      </div>
+    </section>
+
+    </main>
+
+<script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+<script src="{% static 'assets/vendor/typed.js/typed.umd.js' %}"></script>
+<script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+<script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+  <script>
+    window.addEventListener('load', function() {
+      // 1. Initialize Animations (AOS)
+      if (typeof AOS !== 'undefined') {
+        AOS.init({
+          duration: 1000,
+          easing: 'ease-in-out',
+          once: true,
+          mirror: false
+        });
+      }
+
+      // 2. Initialize Typing Effect (Only if the library is loaded)
+      if (typeof Typed !== 'undefined') {
+        const typedElement = document.querySelector('.typed');
+        if (typedElement) {
+          let stringsAttribute = typedElement.getAttribute('data-typed-items');
+          if (stringsAttribute) {
+            let stringsList = stringsAttribute.split(',');
+            new Typed('.typed', {
+              strings: stringsList,
+              loop: true,
+              typeSpeed: 100,
+              backSpeed: 50,
+              backDelay: 2000
+            });
+          }
+        }
+      } else {
+        console.error('Typed.js library not found! Check your static folder path.');
+      }
+    });
+  </script>
+
+</body>
+</html>
+
+</body>
+</html>
