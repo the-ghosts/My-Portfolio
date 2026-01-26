@@ -2,7 +2,7 @@ from django.db import models
 
 
 class MyProject(models.Model):
-    title = models.CharField(max_length=200) # e.g. "Road Traffic Offence System"
+    title = models.CharField(max_length=200) 
     description = models.TextField() # Why you built it and what it does
     image = models.ImageField(upload_to='portfolio_image/') # A screenshot
     github_link = models.URLField(max_length=500) # Link to your code

@@ -84,35 +84,63 @@
             <p class="py-3">
               Beyond coding, I am an expert in configuring live streaming environments. I have extensive experience linking broadcasting software like vMix and OBS with social media platforms for seamless live production. My portfolio showcases my ability to build robust web applications like my <strong>Ecommerce Platform</strong> and <strong>Blog System</strong>.
             </p>
+            
           </div>
         </div>
+      </div>
+      <div class="d-flex justify-content-start mt-4">
+        <a href="{% static 'assets/my_cv.pdf' %}" class="btn btn-primary rounded-pill px-4 py-2" download>
+          <i class="bi bi-download me-2"></i> Download CV
+        </a>
       </div>
     </section>
 
     <section id="skills" class="skills section light-background">
-        <div class="container section-title" data-aos="fade-up">
+      <div class="container section-title" data-aos="fade-up">
         <h2>Skills</h2>
-        </div>
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row skills-content">
-            <div class="col-lg-6">
-            <div class="progress"><span class="skill">Python <i class="val">85%</i></span>
-                <div class="progress-bar-wrap"><div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div></div>
+
+          <div class="col-lg-6">
+            
+            <div class="progress">
+              <span class="skill">Python <i class="val">85%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
             </div>
-            <div class="progress"><span class="skill">Django <i class="val">60%</i></span>
-                <div class="progress-bar-wrap"><div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div></div>
+
+            <div class="progress">
+              <span class="skill">Django <i class="val">75%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
             </div>
+
+          </div>
+
+          <div class="col-lg-6">
+
+            <div class="progress">
+              <span class="skill">SQL/Databases <i class="val">60%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
             </div>
-            <div class="col-lg-6">
-            <div class="progress"><span class="skill">SQL/Databases <i class="val">60%</i></span>
-                <div class="progress-bar-wrap"><div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div></div>
+
+            <div class="progress">
+              <span class="skill">Live Streaming & Media <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
             </div>
-            <div class="progress"><span class="skill">Live Streaming & Media <i class="val">70%</i></span>
-                <div class="progress-bar-wrap"><div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div></div>
-            </div>
-            </div>
+
+          </div>
+
         </div>
-        </div>
+      </div>
     </section>
 
     <section id="portfolio" class="portfolio section">
@@ -129,8 +157,9 @@
                     {% endif %}
                     <div class="portfolio-info p-3">
                     <h4 class="text-dark">{{ project.title }}</h4>
+                    <h4 class="text-dark">{{ project.description }}</h4>
                     <p>Showcasing my completed web applications and technical projects.</p>
-                    <a href="{{ project.github_link }}" class="btn btn-sm btn-primary mt-2">View Repository</a>
+                    <a href="{{ project.live_demo_link }}" class="btn btn-sm btn-primary mt-2">View Live Project</a>
                     </div>
                 </div>
             </div> 
@@ -214,7 +243,7 @@
           </div>
 
           <div class="col-lg-7">
-            <form action="{% url 'index' %}" method="post" class="php-email-form bg-light p-4 rounded shadow" data-aos="fade-up" data-aos-delay="200">
+            <form action="{% url 'index' %}" method="post" class="bg-light p-4 rounded shadow" data-aos="fade-up" data-aos-delay="200">
               {% csrf_token %}
               <div class="row gy-4">
 
