@@ -1,0 +1,146 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Portfolio - Python & Django Developer</title>
+  
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+
+    <div class="profile-img">
+      <img src="{% static 'assets/img/my-profile-img.png' %}" alt="" class="img-fluid rounded-circle">
+    </div>
+
+    <a href="/" class="logo d-flex align-items-center justify-content-center">
+      <h1 class="sitename">Michael Paul</h1>
+    </a>
+
+    <div class="social-links text-center">
+      <a href="https://x.com/PJMiike" class="twitter"><i class="bi bi-twitter-x"></i></a>
+      <a href="https://github.com/the-ghosts" class="github"><i class="bi bi-github"></i></a>
+    </div>
+
+    <nav id="navmenu" class="navmenu">
+        <ul>
+            <li><a href="{% url 'index' %}#hero"><i class="bi bi-house navicon"></i> Home</a></li>
+            <li><a href="{% url 'index' %}#about"><i class="bi bi-person navicon"></i> About</a></li>
+            <li><a href="{% url 'index' %}#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+        </ul>
+    </nav>
+  </header>
+
+    <main class="main">
+        <section id="portfolio" class="portfolio section">
+            <div class="container section-title" data-aos="fade-up">
+                <h2>All Projects</h2>
+                <p>A complete list of my technical work.</p>
+            </div>
+            
+            <div class="container">
+                <div class="row gy-4">
+                    {% for project in projects %}
+                    <div class="col-lg-4 col-md-6 portfolio-item">
+                        <div class="portfolio-content h-100 shadow-sm border rounded bg-white">
+                            {% if project.image %}
+                            <img src="{{ project.image.url }}" class="img-fluid" alt="{{ project.title }}">
+                            {% endif %}
+                            <div class="portfolio-info p-3">
+                                <h4 class="text-dark fw-bold">{{ project.title }}</h4>
+                                <p class="text-muted small">{{ project.description }}</p>
+                                
+                                {% if project.live_demo_link %}
+                                <a href="{{ project.live_demo_link }}" class="btn btn-sm btn-outline-primary mt-2" target="_blank">View Live Project</a>
+                                {% endif %}
+                                
+                                {% if project.github_link %}
+                                <a href="{{ project.github_link }}" class="btn btn-sm btn-outline-dark mt-2" target="_blank"><i class="bi bi-github"></i> Code</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div> 
+                    {% endfor %}
+                </div>
+
+                <div class="text-center mt-5" data-aos="fade-up">
+                    <a href="{% url 'index' %}" class="btn btn-secondary rounded-pill px-5 py-3">
+                        <i class="bi bi-arrow-left ms-2"></i> Back to Home
+                    </a>
+                </div>
+            </div>
+        </section>
+
+ 
+    
+
+
+    </main>
+
+<script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+<script src="{% static 'assets/vendor/typed.js/typed.umd.js' %}"></script>
+<script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+<script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+  <script>
+    window.addEventListener('load', function() {
+      // 1. Initialize Animations (AOS)
+      if (typeof AOS !== 'undefined') {
+        AOS.init({
+          duration: 1000,
+          easing: 'ease-in-out',
+          once: true,
+          mirror: false
+        });
+      }
+
+      // 2. Initialize Typing Effect (Only if the library is loaded)
+      if (typeof Typed !== 'undefined') {
+        const typedElement = document.querySelector('.typed');
+        if (typedElement) {
+          let stringsAttribute = typedElement.getAttribute('data-typed-items');
+          if (stringsAttribute) {
+            let stringsList = stringsAttribute.split(',');
+            new Typed('.typed', {
+              strings: stringsList,
+              loop: true,
+              typeSpeed: 100,
+              backSpeed: 50,
+              backDelay: 2000
+            });
+          }
+        }
+      } else {
+        console.error('Typed.js library not found! Check your static folder path.');
+      }
+    });
+  </script>
+
+</body>
+</html>
+
+</body>
+</html>
