@@ -56,6 +56,11 @@ MIDDLEWARE = [
     
 ]
 
+CORS_ALLOW_ALL_ORIGINS = True
+CSRF_TRUSTED_ORIGINS = [
+    "http://michaelpaul.up.railway.app",
+]
+
 ROOT_URLCONF = 'core.urls'
 
 TEMPLATES = [
