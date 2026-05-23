@@ -52,43 +52,41 @@
 
     <main class="main">
         <section id="portfolio" class="portfolio section">
-            <div class="container section-title" data-aos="fade-up">
-                <h2>All Projects</h2>
-                <p>A complete list of my technical work.</p>
-            </div>
-            
-            <div class="container">
-                <div class="row gy-4">
-                    {% for project in projects %}
-                    <div class="col-lg-4 col-md-6 portfolio-item">
-                        <div class="portfolio-content h-100 shadow-sm border rounded bg-white">
-                            {% if project.image %}
-                            <img src="{{ project.image.url }}" class="img-fluid" alt="{{ project.title }}">
-                            {% endif %}
-                            <div class="portfolio-info p-3">
-                                <h4 class="text-dark fw-bold">{{ project.title }}</h4>
-                                <p class="text-muted small">{{ project.description }}</p>
-                                
-                                {% if project.live_demo_link %}
-                                <a href="{{ project.live_demo_link }}" class="btn btn-sm btn-outline-primary mt-2" target="_blank">View Live Project</a>
-                                {% endif %}
-                                
-                                {% if project.github_link %}
-                                <a href="{{ project.github_link }}" class="btn btn-sm btn-outline-dark mt-2" target="_blank"><i class="bi bi-github"></i> Code</a>
-                                {% endif %}
-                            </div>
-                        </div>
-                    </div> 
-                    {% endfor %}
-                </div>
+        <div class="container section-title" data-aos="fade-up">
+        <h2>Projects</h2>
+        </div>
+        <div class="container">
+        <div class="row gy-4">
+            {% for project in projects %}
+            <div class="col-lg-4 col-md-6 portfolio-item">
+                <div class="portfolio-content h-100 shadow-sm border rounded bg-white">
+                    {% if project.image %}
+                    <img src="{{ project.image.url }}" class="img-fluid" alt="{{ project.title }}">
+                    {% endif %}
+                    
+                    <div class="portfolio-info p-3">
+                        {% if project.category == 'client' %}
+                            <span class="badge bg-success mb-2 px-3 py-2">⭐ Real Client Project</span>
+                        {% else %}
+                            <span class="badge bg-secondary mb-2">Practice Demo</span>
+                        {% endif %}
 
-                <div class="text-center mt-5" data-aos="fade-up">
-                    <a href="{% url 'index' %}" class="btn btn-secondary rounded-pill px-5 py-3">
-                        <i class="bi bi-arrow-left ms-2"></i> Back to Home
-                    </a>
+                        <h4 class="text-dark fw-bold mt-2">{{ project.title }}</h4>
+                        <p class="text-muted small mb-3">{{ project.description }}</p>
+                        
+                        <a href="{{ project.live_demo_link }}" class="btn btn-sm btn-outline-primary" target="_blank">View Live Project</a>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </div> 
+            {% endfor %}
+        </div>
+        <div class="text-center mt-5" data-aos="fade-up">
+          <a href="{% url 'all_projects' %}" class="btn btn-primary rounded-pill px-5 py-3">
+              See More Projects <i class="bi bi-arrow-right ms-2"></i>
+          </a>
+        </div>
+        </div>
+    </section>
 
  
     

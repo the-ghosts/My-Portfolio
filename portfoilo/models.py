@@ -9,6 +9,12 @@ class MyProject(models.Model):
     live_demo_link = models.URLField(blank=True, null=True) # Link to the website (if live)
     date_added = models.DateTimeField(auto_now_add=True)
 
+    CATEGORY_CHOICES = (
+        ('demo', 'Demo Project'),
+        ('client', 'Client Project'),
+    )
+    category = models.CharField(max_length=20, choices=CATEGORY_CHOICES, default='demo')
+
     def __str__(self):
         return self.title
 
@@ -22,5 +28,7 @@ class ContactMessage(models.Model):
 
     def __str__(self):
         return f"Message from {self.name} - {self.subject}"
+
+
 
 # Create your models here.

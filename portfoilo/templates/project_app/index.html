@@ -155,11 +155,18 @@
                     {% if project.image %}
                     <img src="{{ project.image.url }}" class="img-fluid" alt="{{ project.title }}">
                     {% endif %}
+                    
                     <div class="portfolio-info p-3">
-                    <h4 class="text-dark">{{ project.title }}</h4>
-                    <h4 class="text-dark">{{ project.description }}</h4>
-                    <p>Showcasing my completed web applications and technical projects.</p>
-                    <a href="{{ project.live_demo_link }}" class="btn btn-sm btn-primary mt-2">View Live Project</a>
+                        {% if project.category == 'client' %}
+                            <span class="badge bg-success mb-2 px-3 py-2">⭐ Real Client Project</span>
+                        {% else %}
+                            <span class="badge bg-secondary mb-2">Practice Demo</span>
+                        {% endif %}
+
+                        <h4 class="text-dark fw-bold mt-2">{{ project.title }}</h4>
+                        <p class="text-muted small mb-3">{{ project.description }}</p>
+                        
+                        <a href="{{ project.live_demo_link }}" class="btn btn-sm btn-outline-primary" target="_blank">View Live Project</a>
                     </div>
                 </div>
             </div> 
